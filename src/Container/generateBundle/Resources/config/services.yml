@@ -1,0 +1,7 @@
+parameters:
+#    containergenerate.example.class: Container\generateBundle\Example
+
+services:
+#    containergenerate.example:
+#        class: %containergenerate.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

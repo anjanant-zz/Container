@@ -1,0 +1,11 @@
+containergenerate_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ContainergenerateBundle:Default:index }
+
+containergenerate_formulaire:
+    path:     /gestionclient
+    defaults: { _controller: ContainergenerateBundle:Default:gestionclient }
+
+containergenerate_decaissement:
+    path:     /decaissementattribuer
+    defaults: { _controller: ContainergenerateBundle:Default:decaissementattribuer }

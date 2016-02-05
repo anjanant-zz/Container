@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+        <meta name="author" content="GeeksLabs">
+        <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <title>Gestion de TC </title>
+
+        <!-- Bootstrap CSS --> 
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/orman.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/menu.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/pascal.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/default.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/jquery-ui-1.8.24.custom.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-theme.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/nivo-slider.css') }}"/>
+        
+        <!-- bootstrap theme -->
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-theme.css') }}" />
+
+        <!--external css-->
+        <!-- font icon -->
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/elegant-icons-style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/font-awesome.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/sb-admin-2.css') }}" />
+
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/style-responsive.css') }}" />
+        <!-- javascripts -->
+        <!-- javascripts -->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery-ui-1.10.4.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery-1.8.3.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery-ui-1.9.2.custom.min.js') }}"></script>
+
+
+        <!-- bootstrap -->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/bootstrap.min.js') }}"></script>
+        <!-- nice scroll -->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.scrollTo.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.nicescroll.js') }}"></script>
+
+        <!-- charts scripts -->
+
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/assets/jquery-knob/js/jquery.knob.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.sparkline.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/owl.carousel.js') }}"></script>
+
+        <!-- jQuery full calendar -->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/fullcalendar.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/assets/fullcalendar/fullcalendar/fullcalendar.js') }}"></script>
+
+        <!--script for this page only-->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/calendar-custom.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.rateit.min.js') }}"></script>
+        <!-- custom select -->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.customSelect.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/assets/chart-master/Chart.js') }}"></script>
+        <!--custome script for all page-->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/scripts.js') }}"></script>
+
+        <!-- custom script for this page-->
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/sparkline-chart.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/easy-pie-chart.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery-jvectormap-1.2.2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery-jvectormap-world-mill-en.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/xcharts.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.autosize.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.placeholder.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/gdp-data.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/morris.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/sparklines.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/charts.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery.slimscroll.min.js') }}"></script>	
+
+
+        <script>
+
+            //knob
+            $(function() {
+                $(".knob").knob({
+                    'draw': function() {
+                        $(this.i).val(this.cv + '%')
+                    }
+                })
+            });
+
+            //carousel
+            $(document).ready(function() {
+                $("#owl-slider").owlCarousel({
+                    navigation: true,
+                    slideSpeed: 300,
+                    paginationSpeed: 400,
+                    singleItem: true
+
+                });
+            });
+
+            //custom select box
+
+            $(function() {
+                $('select.styled').customSelect();
+            });
+
+            /* ---------- Map ---------- */
+            $(function() {
+                $('#map').vectorMap({
+                    map: 'world_mill_en',
+                    series: {
+                        regions: [{
+                                values: gdpData,
+                                scale: ['#000', '#000'],
+                                normalizeFunction: 'polynomial'
+                            }]
+                    },
+                    backgroundColor: '#eef3f7',
+                    onLabelShow: function(e, el, code) {
+                        el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+                    }
+                });
+            });
+
+
+
+        </script>
+
+
+
+
+        <script>
+
+            //knob
+            $(".knob").knob();
+
+        </script>
+
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+          <script src="js/lte-ie7.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <!-- container section start -->
+        <section id="container" class="">
+            <!--header start-->
+            <header class="header dark-bg">
+                <div class="toggle-nav">
+                    <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+                </div>
+
+                <!--logo start-->
+                <a href="http://localhost/gestiondeTC/web/app_dev.php" class="logo"> GestionTC <span class="lite">Admin</span></a>
+                <!--logo end-->
+
+                <div class="top-nav notification-row">                
+                    <!-- notificatoin dropdown start-->
+                    <ul class="nav pull-right top-menu">
+
+
+
+                        <!-- user login dropdown start-->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="profile-ava">
+                                    <img alt="" src="img/avatar1_small.jpg">
+                                </span>
+                                <span class="username">Test</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu extended logout">
+                                <div class="log-arrow-up"></div>
+                                <li class="eborder-top">
+                                    <a href="http://localhost/gestiondeTC/web/app_dev.php/profile"><i class="icon_profile"></i> Mon Profile</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost/gestiondeTC/web/app_dev.php/profile/edit"><i class="icon_mail_alt"></i>Editter Profil</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost/gestiondeTC/web/app_dev.php/logout"><i class="icon_key_alt"></i>Ajout Utilisateur</a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost/gestiondeTC/web/app_dev.php/register"><i class="icon_key_alt"></i> Log Out</a>
+                                </li>
+                                <li>
+                                    <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- user login dropdown end -->
+                    </ul>
+                    <!-- notificatoin dropdown end-->
+                </div>
+            </header>      
+            <!--header end-->
+
+
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu">                
+                        <li class="active">
+                            <a class="" href="http://localhost/gestiondeTC/web/app_dev.php">
+                                <i class="icon_house_alt"></i>
+                                <span>Acceuil</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_document_alt"></i>
+                                <span>Transporteur</span>
+                                <span class="menu-arrow arrow_carrot-right"></span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/chauffeur">Chauffeur</a></li>                          
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/categorietransporteur">categorie transporteur</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/vehicule">Vehicule</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/portecontainer">Remorque</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/transporteur">Transporteur</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/transporterrececoir">Recep transporteur</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/transporterretirer">Decais transporteur</a></li>
+
+                            </ul>
+                        </li>       
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_desktop"></i>
+                                <span>Contenneurs</span>
+                                <span class="menu-arrow arrow_carrot-right"></span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etat">Etat TC</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/nature">Nature</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/categorie">Type TC</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/container">containers</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="" href="http://localhost/gestiondeTC/web/app_dev.php">
+                                <i class="icon_genius"></i>
+                                <span>Acceui</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_desktop"></i>
+                                <span>Verification</span>
+                                <span class="menu-arrow arrow_carrot-right"></span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/personnel">Verificateur</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/nettoyage">Nettoyage TC</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/descriptiondesavaries">Remarque/avaries</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/verifier">Resultats verification</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_genius"></i>
+                                <span>Navire</span>
+                                <span class="menu-arrow arrow_carrot-right"></span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/voyage">Voyage</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/navire">Navire</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/importer">Importer</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/exporter">Exporter</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/transitaire">Transitaire</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/recevoir">Validation transitaire</a></li>
+
+
+
+                            </ul>  
+                        </li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_piechart"></i>
+                                <span>Stockage</span>
+                                <span class="menu-arrow arrow_carrot-right"></span> 
+                            </a>
+                            <ul class="sub">
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/utilisateur">Utilisateur</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/agence">Agence</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/depot">Depot</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/company">Company</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/informer">Informations company</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/sortir">Sortir</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/entrer">Entrer</a></li>
+                            </ul>    
+                        </li>  
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_document_alt"></i>
+                                <span>Etats</span>
+                                <span class="menu-arrow arrow_carrot-right"></span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsannuelle">Etat annuelle</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsmensuelle">Etat mensuelle</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsmsc">Etat M-MSC</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsmensuellemol">Etat M-MOL</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsmensuelle">Etat M-divers</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsmensuellemsc">Etat J-MSC</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsmol">Etat J-MOL</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/etatsmensuelle">Etat J-Divers</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_document_alt"></i>
+                                <span>EIR</span>
+                                <span class="menu-arrow arrow_carrot-right"></span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/EIRr">EIR(R)</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/EIRl">EIR(L)</a></li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" class="">
+                                <i class="icon_documents_alt"></i>
+                                <span>Pages</span>
+                                <span class="menu-arrow arrow_carrot-right"></span>
+                            </a>
+                            <ul class="sub">                          
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/profile">Profile</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/login"><span>Login Page</span></a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/blank">Blank Page</a></li>
+                                <li><a class="" href="http://localhost/gestiondeTC/web/app_dev.php/chiffre">404 Error</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+
+
+            <!--formulaire start-->
+
+            <div class="panel panel-default">
+
+                <div class="panel panel-primary" style="margin-top: 50PX; width: 1400PX;">
+                    <div class="form1 col-lg-7 col-lg-offset-3" style=" position: fixed;"> 
+                       <div class="panel panel-heading" style=" margin-top: 20PX; background-color: tan;">DECAISSEMENT POUR L'EXPORTATION</div> 
+                    <br/><br/>
+                    <div class="form2">
+                        
+                        <div class="page-header">
+                            <b style="text-align:center"><h5>DECAISSEMENT EXPORTER</h5></b>
+                        </div>
+                        <form method="post" enctype="multipart/form-data" action="/mesupres/web/app_dev.php/SPAT/newAgent" class="formulaire" style="margin-left:10PX;">
+
+                            <div class="form3">
+                                <div class="panel panel-heading">RETRAIT DU CONTAINER</div>
+                           
+                                <table class="table" style=" background-color: #cccccc;">  
+                                  
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_AgentSPAT_nom">NUMERO RETRAIT</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_AgentSPAT_nom" name="page_spatbundle_etatagent[AgentSPAT][nom]" required="required" class="input" />
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_AgentSPAT_prenom">DATE RETRAIT</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_AgentSPAT_prenom" name="page_spatbundle_etatagent[AgentSPAT][prenom]" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td colspan="2">
+                                            <div class="panel-heading">INFORMATION AUX EXPORTATION</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_diplome" class="required">DATE IMPORTER</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_cadre_attestation" name="page_spatbundle_etatagent[PosteSPAT][cadre][attestation]" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_diplome" class="required">NOM NAVIRE</label>
+                                        </td>
+                                        <td> <select id="page_spatbundle_etatagent_PosteSPAT_statut_StatJ" name="page_spatbundle_etatagent[PosteSPAT][statut][StatJ]" required="required" class="input_stat">
+                                               <option value="" selected="selected">--veuillez selectionner--</option>
+                                               <option value="CONTRACTUEL">EXTERNE</option>
+                                               <option value="FONCTIONNAIRE">INTERNE</option>
+                                           </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_diplome" class="required">NUMERO CONTAINER</label>
+                                        </td>
+                                        <td> <select id="page_spatbundle_etatagent_PosteSPAT_statut_StatJ" name="page_spatbundle_etatagent[PosteSPAT][statut][StatJ]" required="required" class="input_stat">
+                                               <option value="" selected="selected">--veuillez selectionner--</option>
+                                               <option value="CONTRACTUEL">EXTERNE</option>
+                                               <option value="FONCTIONNAIRE">INTERNE</option>
+                                           </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td colspan="2">
+                                            <div class="panel-heading">INFORMATION TC</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_diplome" class="required">NUMERO</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_cadre_attestation" name="page_spatbundle_etatagent[PosteSPAT][cadre][attestation]" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_attestation">NUMERO PLOMB</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_cadre_attestation" name="page_spatbundle_etatagent[PosteSPAT][cadre][attestation]" class="input" />
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_categorie" class="required">Code Iso</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_cadre_attestation" name="page_spatbundle_etatagent[PosteSPAT][cadre][attestation]" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_dateEffet" class="required">Etat du container</label>
+                                        </td>
+                                        
+                                        <td> <input type="date" id="page_spatbundle_etatagent_PosteSPAT_cadre_dateEffet" name="page_spatbundle_etatagent[PosteSPAT][cadre][dateEffet]" required="required" class="date" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_libgrade" class="required">ETAT</label>
+                                        </td>
+                                        <td> <select id="page_spatbundle_etatagent_PosteSPAT_cadre_libgrade" name="page_spatbundle_etatagent[PosteSPAT][cadre][libgrade]" required="required" class="libgrade">
+                                                <option value="" selected="selected">veuillez selectionner</option>
+                                                <option value="Vide">Vide</option>
+                                                <option value="Plein">Plein</option>
+                                                </select>
+                                        </td>
+                                   </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_dateEffet" class="required">Nom container</label>
+                                        </td>
+                                        <td> <input type="date" id="page_spatbundle_etatagent_PosteSPAT_cadre_dateEffet" name="page_spatbundle_etatagent[PosteSPAT][cadre][dateEffet]" required="required" class="date" />
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                     <tr>
+                                     <td colspan="2">
+                                            <div class="panel-heading">CATEGORIE DU TC</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_diplome" class="required">TYPE</label>
+                                        </td>
+                                       <td> <select id="page_spatbundle_etatagent_PosteSPAT_cadre_libgrade" name="page_spatbundle_etatagent[PosteSPAT][cadre][libgrade]" required="required" class="libgrade">
+                                                <option value="" selected="selected">veuillez selectionner</option>
+                                                <option value="20Pied">20Pied</option>
+                                                <option value="40Pied">40Pied</option>
+                                                </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_attestation">CODE TYPE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_cadre_attestation" name="page_spatbundle_etatagent[PosteSPAT][cadre][attestation]" class="input" />
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_categorie" class="required">POD</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_cadre_attestation" name="page_spatbundle_etatagent[PosteSPAT][cadre][attestation]" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <<td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_cadre_libgrade" class="required">Nature</label>
+                                        </td>
+                                        <td> <select id="page_spatbundle_etatagent_PosteSPAT_cadre_libgrade" name="page_spatbundle_etatagent[PosteSPAT][cadre][libgrade]" required="required" class="libgrade">
+                                                <option value="" selected="selected">veuillez selectionner</option>
+                                                <option value="S2">S2</option>
+                                                <option value="S4">S4</option>
+                                                <option value="C4">C4</option>
+                                                <option value="F2">F2</option>
+                                                <option value="F4">F4</option>
+                                                <option value="P2">P2</option>
+                                                <option value="P4">P4</option>
+                                                <option value="R2">R2</option>
+                                                <option value="Z4">Z4</option>
+                                                <option value="T2">T2</option>
+                                                <option value="T4">T4</option>
+                                                </select>
+                                        </td>
+                                    </tr>
+                                                 
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">INFORMATIONS TRANSPORTEUR</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">NOM TRANSPORTEUR</label>
+                                        </td>
+                                         <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" class="required">ADRESSE TRANSPORTEUR</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" name="page_spatbundle_etatagent[PosteSPAT][budget][budgChap]" required="required" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" class="required">EMAIL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" name="page_spatbundle_etatagent[PosteSPAT][budget][budgArt]" required="required" class="input" />
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgModP" class="required">TEL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+
+                                    <tr id="categorietransporteur">
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgNumCpt">CATEGORIE TRANSPORTEUR</label>
+                                        </td>
+                                       <td> <select id="page_spatbundle_etatagent_PosteSPAT_statut_StatJ" name="page_spatbundle_etatagent[PosteSPAT][statut][StatJ]" required="required" class="input_stat">
+                                               <option value="" selected="selected">--veuillez selectionner--</option>
+                                               <option value="CONTRACTUEL">EXTERNE</option>
+                                               <option value="FONCTIONNAIRE">INTERNE</option>
+                                           </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">RENSEIGNEMENT VEHICULE</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_StatJ" class="required">IMMATRICULATION</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr id="cartegrisse">
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_dureeC">CARTE GRISEE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr id="duree">
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_dureeC">NOM VEHICULE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">RENSEIGNEMENT PORTE CONTAINER</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_StatJ" class="required">IMMATRICULATION</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr id="">
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_dureeC">CARTE GRISEE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    
+                                     <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">RENSEIGNEMENT CHAUFFEUR</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_StatJ" class="required">N° PERMIS</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr id="nom">
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_dureeC">NOM</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr id="adresse">
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_dureeC">ADRESSE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr id="tel">
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_statut_dureeC">TEL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">VERIFICATEUR</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">NOM VERIFICATEUR</label>
+                                        </td>
+                                         <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" class="required">EMAIL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" name="page_spatbundle_etatagent[PosteSPAT][budget][budgChap]" required="required" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" class="required">FONCTION</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" name="page_spatbundle_etatagent[PosteSPAT][budget][budgArt]" required="required" class="input" />
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgModP" class="required">TEL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>                                
+                                    <tr>
+                                        <td>
+                                        </td>
+                                    </tr> 
+                                   
+                                     <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">RESULTAT VERIFICATION</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">REMARQUE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" class="required">TEMPERATURE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" name="page_spatbundle_etatagent[PosteSPAT][budget][budgChap]" required="required" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" class="required">HORS GABARIT</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" name="page_spatbundle_etatagent[PosteSPAT][budget][budgArt]" required="required" class="input" />
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">DESCRIPTION DES AVARIES</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">NOMENCLATURE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" class="required">DESCRIPTION</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgChap" name="page_spatbundle_etatagent[PosteSPAT][budget][budgChap]" required="required" class="input" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" class="required">SIGNE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_budget_budgArt" name="page_spatbundle_etatagent[PosteSPAT][budget][budgArt]" required="required" class="input" />
+                                        </td>
+                                    </tr> 
+                                     <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">INFORMATIONS AU DEPOT</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">LIBELE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">INFORMATIONS AGENCE DEPOT</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">ADRESSE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">MAIL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">TEL AGENCE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                   <tr>
+                                       
+                                    
+                                      <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">INFORMATIONS DU COMPANY AU EMPLACEMENT DU CONTAINER</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">NOM COMPANY</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">ADRESSE</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">MAIL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">TEL</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                      <tr>
+                                        <td colspan="2">
+                                            <div class="panel-heading">INFORMATIONS AU RECEPTION TRANSITAIRE</div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                            <label for="page_spatbundle_etatagent_PosteSPAT_budget_budgetP" class="required">VALIDATION</label>
+                                        </td>
+                                        <td> <input type="text" id="page_spatbundle_etatagent_PosteSPAT_statut_dureeC" name="page_spatbundle_etatagent[PosteSPAT][statut][dureeC]" class="nombre" />
+                                        </td>
+                                    </tr>
+                                 
+                                                          
+                                </table>
+                            </div>
+                            <input type="hidden" id="page_spatbundle_etatagent__token" name="page_spatbundle_etatagent[_token]" value="Z-AWQlVNyFrFvEwoUXcJMjsnWpEKCUxJnQTmIqO5hIg" />
+                            <p align="center">
+                                <input action="action" class="btn btn-default" type="button" value="ANNULER" onclick="history.go(-1);" />
+                                <input type="submit" class="btn btn-default" value="ENREGISTRER"/></p>
+
+                        </form>
+                        <div class="page-header"></div>
+                    </div>
+                </div>
+               </div>
+            </div>
+
+
+
+            <!-- formulaire end -->
+
+    </body>
+</html>

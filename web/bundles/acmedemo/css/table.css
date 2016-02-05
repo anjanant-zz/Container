@@ -1,0 +1,16 @@
+table{
+    margin-left:100PX;
+    margin-top: 15PX;
+}
+h1{
+   margin-left:100PX; 
+}
+label{
+    margin:10PX;
+    margin-top:5PX;
+    
+}
+button{
+    margin: 10PX;
+    margin-left: 20PX;
+}

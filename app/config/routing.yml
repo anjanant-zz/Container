@@ -1,0 +1,4 @@
+containergenerate:
+    resource: "@ContainergenerateBundle/Resources/config/routing.yml"
+    prefix:   /
+

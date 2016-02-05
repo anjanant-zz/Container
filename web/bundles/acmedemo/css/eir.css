@@ -1,0 +1,43 @@
+
+
+
+img{
+    width:40%;
+    height:40%;
+    margin-left:80PX;
+    
+   }
+fieldset{
+    margin: 100PX;
+    
+   }   
+
+   
+ b{
+      margin-left: 800px; 
+ }   
+   
+ 
+   p{
+       marigin:200PX;
+   }
+ 
+   
+   .ligne-vertical{
+       margin:0PX;
+       clear: both;
+       font-weight: bold;
+   }
+   
+   table{
+       margin-left:50PX;
+       
+   }
+   
+   span{
+       margin:400PX;      
+   }
+   
+   .lab{
+       margin-left: 300px;      
+   }
